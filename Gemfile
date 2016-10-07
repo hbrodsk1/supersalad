@@ -30,6 +30,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 #Use omniauth to allow users to log in through other web apps
 gem 'omniauth'
+gem 'omniauth-facebook'
+#Use figaro to set up environment variables
+gem 'figaro'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
