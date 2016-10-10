@@ -1,0 +1,27 @@
+<h1>Foods#new</h1>
+
+
+
+<%= form_for @food,  url: {action: "create"}, html: { multipart: true } do |f| %>
+  
+ 
+ <div class="field">
+ 	<%=f.hidden_field :user_id, :value => current_user.id %>
+
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :kind %><br>
+    <%= f.select(:kind, [['Soup', 'soup'], ['Salad', 'salad']]) %>
+  </div>
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+    
+  </div>
+ 
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
