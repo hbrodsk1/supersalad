@@ -1,4 +1,8 @@
 class User < ApplicationRecord
+  has_many :foods
+  has_many :votes
+
+  
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable,
