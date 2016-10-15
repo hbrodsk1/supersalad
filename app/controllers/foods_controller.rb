@@ -10,8 +10,12 @@ class FoodsController < ApplicationController
   	if @food.save
   		redirect_to user_path(@food.user_id)
   	else
-  		render new
+  		render 'new'
   	end
+  end
+
+  def show
+    @food = Food.find(params[:id])
   end
 
   def destroy
@@ -26,6 +30,6 @@ class FoodsController < ApplicationController
   private
 
   	def food_params
-  		params.require(:food).permit(:kind, :title, :user_id, :image, :wins, :loses)
+  		params.require(:food).permit(:kind, :title, :user_id, :image, :wins, :loses, :recipe, :description)
   	end
 end

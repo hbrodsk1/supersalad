@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   before_action :authenticate_user!
 
-	def after_sign_up_path_for(resource)
+	  def after_sign_up_path_for(resource)
     	user_path(current_user)
   	end
 
@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   	end
 
   	def logged_in?
-  	current_user ? true : false
+  	  current_user ? true : false
   	end
 
 end

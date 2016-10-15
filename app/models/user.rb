@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  has_many :foods
-  has_many :votes
+  has_many :foods, dependent: :destroy
+  has_many :votes, dependent: :destroy
 
   
   # Include default devise modules. Others available are:

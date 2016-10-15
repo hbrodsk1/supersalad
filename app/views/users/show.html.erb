@@ -1,5 +1,5 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h2>Hey <%= @user.firstname %>!</h2>
+<p>Check out these dank Soups and Salads you've served up or <%= link_to "Upload some new Soup or Salad", new_food_path %></p>
 <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
 
 
@@ -10,9 +10,11 @@
   <strong>Image:</strong>
   <% @user.foods.each do |food| %>
 
-  <p><%= image_tag food.image.url %></p>
+  <h3><%= food.title.capitalize %></h3>
+  <p><%= link_to (image_tag (food.image.url)), food_path(food.id) %></p>
   <%= link_to "Delete", food, method: :delete, data: {confirm: "Really delete this article?"} %>
   <% end %> 
+
 
 
 
