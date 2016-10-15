@@ -1,0 +1,10 @@
+<div><%= image_tag @food.image.url %></div>
+<p><%= @food.title %></p>
+
+<%# make these things below conditional as if to if they already exist or not. If they dont, then render render a textbox to add the information %>
+<p><%= @food.description %></p> 
+<p><%= @food.recipe %></p>
+
+
+<%# use .capitalize instead of to_s below once all users have a username %>
+<p>Back to <%= link_to @food.user.username.to_s + "'s profile", user_path(@food.user_id) %></p>
