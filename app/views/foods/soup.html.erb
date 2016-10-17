@@ -1,0 +1,5 @@
+<% @soups.each do |soup| %>
+	<h3><%= link_to soup.title.capitalize, food_path(soup.id) %></h3>
+  	<%= link_to image_tag(soup.image_url, :size => "260x180"), food_path(soup.id) %>
+
+<% end %>
