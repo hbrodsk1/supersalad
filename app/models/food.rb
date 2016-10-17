@@ -5,4 +5,8 @@ class Food < ApplicationRecord
 	validates :title, :kind, :image, presence: true
 
 	mount_uploader :image, ImageUploader
+
+	def Food.random_soup
+  		Food.all.where(kind: 'soup').shuffle
+  	end
 end

@@ -10,7 +10,7 @@
   <strong>Image:</strong>
   <% @user.foods.each do |food| %>
 
-  <h3><%= food.title.capitalize %></h3>
+  <h3><%= link_to food.title.capitalize, food_path(food.id) %></h3>
   <p><%= link_to (image_tag (food.image.url)), food_path(food.id) %></p>
   <%= link_to "Delete", food, method: :delete, data: {confirm: "Really delete this article?"} %>
   <% end %> 

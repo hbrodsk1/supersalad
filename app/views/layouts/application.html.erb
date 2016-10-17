@@ -9,6 +9,13 @@
   </head>
 
   <body>
+  	<header class="header">
+  		<ul class="header-list">
+  			<li class="header-list-item"> <%= link_to "home",  home_path %></li>
+  			<li class="header-list-item"> <%= link_to "profile",  "#" %></li>
+  			<li class="header-list-item"> <%= link_to 'Logout', "#" %></li>
+  		</ul>
+  	</header>
     <%= yield %>
   </body>
 </html>

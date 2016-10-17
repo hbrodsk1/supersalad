@@ -1,5 +1,17 @@
 class FoodsController < ApplicationController
 
+  def index
+    @foods = Food.all
+  end
+
+  def soup
+    @soups = Food.all.where(kind: 'soup')
+  end
+
+  def salad
+    @salads = Food.all.where(kind: 'salad')
+  end
+
   def new
   	@food = Food.new
   end
