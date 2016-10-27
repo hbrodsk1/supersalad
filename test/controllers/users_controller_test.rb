@@ -10,9 +10,8 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   	  assert_redirected_to new_user_session_url
     end
 
-    test "should get home" do
-	  
-  get :show
+  test "should get home" do
+      get :show
       assert_response :success
     end
 

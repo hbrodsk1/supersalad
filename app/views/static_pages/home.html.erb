@@ -1,5 +1,5 @@
 <h2>Hey <%= current_user.email %>!</h2>
 
-<p>Browse by: <%= link_to (image_tag (@soup.url)), soups_path %></p>
+<p>Browse by: <%= link_to (image_tag (Food.all.where(kind: 'soup').first.image.url)), soups_path %></p>
 
-<p>Browse by: <%= link_to (image_tag (Food.last.image.url)), salads_path %></p>
+<p>Browse by: <%= link_to (image_tag (Food.all.where(kind: 'salad').first.image.url)), salads_path %></p>

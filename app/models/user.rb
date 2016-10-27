@@ -2,6 +2,8 @@ class User < ApplicationRecord
   has_many :foods, dependent: :destroy
   has_many :votes, dependent: :destroy
 
+  validates :email, :password, presence: true
+
   
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable

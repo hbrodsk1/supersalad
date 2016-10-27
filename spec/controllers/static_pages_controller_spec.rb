@@ -3,9 +3,8 @@ require 'rails_helper'
 RSpec.describe StaticPagesController, type: :controller do
 
 	before(:each) do
-	  @user = User.first
-      @user.confirm
-      sign_in @user
+	    user = create(:user)
+      sign_in(user)
   	end
 
 	describe "GET #home" do
