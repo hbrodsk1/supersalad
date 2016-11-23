@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+	background: url(textured_paper.png);
+}
+
+a {
+	text-decoration: none!important;
+}
+
+.links {
+	margin-bottom: 2em;
+}

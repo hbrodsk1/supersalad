@@ -51,7 +51,6 @@ class FoodsController < ApplicationController
   	if @food.destroy
   		redirect_to user_path(current_user.id)
   	end
-
   end
 
 

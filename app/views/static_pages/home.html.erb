@@ -1,5 +1,16 @@
-<h2>Hey <%= current_user.email %>!</h2>
+<h4 class="greeting col-sm-12">Hey <%= current_user.email %>!</h4>
+<h3 class="craving col-sm-12">Are you craving...</h3>
+<div class="browse-by col-sm-12">
+	<div class="browse-food col-sm-3 col-sm-offset-2">
+		<%= link_to (image_tag (Food.all.where(kind: 'soup').first.image.url)), soups_path%>
+		<h3 class="title"><%= link_to "Soup", soups_path %></h3>
+	</div>
 
-<p>Browse by: <%= link_to (image_tag (Food.all.where(kind: 'soup').first.image.url)), soups_path %></p>
+	<p class="col-sm-2 or">or</p>
 
-<p>Browse by: <%= link_to (image_tag (Food.all.where(kind: 'salad').first.image.url)), salads_path %></p>
+	<div class="browse-food col-sm-3">
+		<%= link_to (image_tag (Food.all.where(kind: 'salad').first.image.url)), salads_path %>
+		<h3 class="title"><%= link_to "Salad", salads_path %></h3>
+	</div>
+	
+</div>

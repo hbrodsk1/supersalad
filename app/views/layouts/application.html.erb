@@ -1,21 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Supersalad</title>
+    <title>SuperSalad</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   </head>
 
   <body>
-  	<header class="header">
-  		<ul class="header-list">
-  			<li class="header-list-item"> <%= link_to "home",  home_path %></li>
-  			<li class="header-list-item"> <%= link_to "profile",  "#" %></li>
-  			<li class="header-list-item"> <%= link_to 'Logout', "#" %></li>
-  		</ul>
-  	</header>
+  <% if logged_in? %>
+  	<nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+        <a class="navbar-brand" href="/home">SuperSalad</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+          <li> <%= link_to "Home",  home_path %></li>
+          <li> <%= link_to "Profile",  user_path(current_user) %></li>
+          <li> <%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
+        </ul>
+      </div>
+    </nav>
+    <% end %>
     <%= yield %>
   </body>
 </html>

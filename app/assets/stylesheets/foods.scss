@@ -1,3 +1,75 @@
 // Place all the styles related to the Foods controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$primary-color: #2c3e52;
+
+.greeting {
+	font-size: 3em;
+	color: #5c3246;
+}
+
+.food-container {
+	display: inline-block;
+	.title {
+		font-size: 4em;
+		margin-bottom: 1em;
+		text-align: center;
+	}
+	.food {
+		margin-bottom: 50px;
+		text-align: center;
+		.img-preview {
+			border-radius: 50%;
+			width: 200px;
+			height: 200px;
+			&:hover {
+					transform: scale(1.01);
+   				}
+		}
+		.main-pic {
+			border-radius: 50%;
+			width: 400px;
+			height: 400px;
+		}
+		.title-preview {
+			font-size: 1.5em;
+
+			a {
+				color: black;
+				text-decoration: none;
+				color: $primary-color;
+				 &:hover {
+        			color: #738394;
+   				 }
+			}
+		}
+	}
+	.description {
+		text-align: center;
+		height: 400px;
+		font-size: 1.3em;
+		color: $primary-color;
+		p {
+			transform: translateY(-50%);
+			position: relative;
+  			top: 50%;
+		}
+	}
+}
+
+.form-container {
+	color: $primary-color;
+	.form {
+		height: auto;
+		.purpose {
+			font-size: 3em;	
+		}
+		input[type=file] {
+			font-size: 1.2em;
+			margin: auto;
+			margin-top: 2em;
+			margin-bottom: 2em;
+		}
+	}
+}
+

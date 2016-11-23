@@ -1,3 +1,87 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$primary-color: #2c3e52;
+
+.heading {
+	font-size: 1.3em;
+	line-height: 1.5em;
+	color: $primary-color;
+	text-align: center;
+	border-bottom: 1px solid $primary-color;
+}
+
+.row {
+	display: flex;
+	align-items: center;
+	margin-bottom: 1%;
+	padding-bottom: 20px;
+	border-bottom: 1px solid $primary-color;
+	.food {
+		align-items: stretch;
+		text-align: center;
+		.title {
+			font-size: 2em;
+			a {
+				color: $primary-color;
+			}
+		}
+		img {
+			border-radius: 50%;
+			margin-bottom: 1.5em;
+			height: 200px;
+			width: 200px;
+		}
+		input {
+			background: white;
+			color: $primary-color;
+			font-weight: 700;
+			border-radius: 10px;
+		}
+	}
+	.description {
+		text-align: center;
+		top: 50%;
+		font-size: 1.3em;
+	}
+}
+
+.form-container {
+	display: flex;
+	justify-content: center;
+	color: $primary-color;
+	.form {
+		margin-top: 5%;
+		border-radius: 5px;
+		background-color: #fff;
+		height: auto;
+		text-align: center;
+		border: 1px solid $primary-color;
+		.purpose {
+			margin-bottom: 1em;
+		}
+		.field {
+			margin-bottom: 1em;
+			label {
+				color: $primary-color;
+			}
+			input {
+				width: 300px;
+				height: 30px;
+			}
+		}
+		.remember-me {
+				margin-bottom: 1.5em;
+			}
+		.actions {
+			border-radius: 3px;
+			background-color: $primary-color;
+			color: #e9ebed;
+			width: 200px;
+			margin-top: 1em;
+			margin-bottom: 5em;
+		}
+	}
+}
+
+	

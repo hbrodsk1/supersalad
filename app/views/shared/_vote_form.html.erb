@@ -1,0 +1,12 @@
+<% unless current_user.votes.pluck(:food_id).include?(food.id) %>
+	<% vote = current_user.votes.build %>
+	<%= form_for [@user, vote] do |f| %>
+	<%= f.hidden_field 'food_id', value: food.id %>
+	<%= f.hidden_field 'user_id', value: current_user.id %>
+	<%= f.submit "Like This Food" %>
+<% end %>
+
+<% else %>
+<% vote = food.votes.where(user_id: current_user.id).first %>
+<%= button_to "Unlike This Food", user_vote_path(@user, vote), method: :delete %>
+<% end %>

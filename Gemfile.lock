@@ -42,6 +42,8 @@ GEM
     ansi (1.5.0)
     arel (7.1.2)
     bcrypt (3.1.11)
+    bootstrap-sass (3.1.1.1)
+      sass (~> 3.2)
     builder (3.2.2)
     byebug (9.0.5)
     capybara (2.9.2)
@@ -267,6 +269,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-sass (~> 3.1.1)
   byebug
   capybara
   carrierwave (>= 1.0.0.beta, < 2.0)

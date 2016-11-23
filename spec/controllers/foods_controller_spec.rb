@@ -34,6 +34,13 @@ RSpec.describe FoodsController, :type => :controller do
     end
   end
 
+  describe "GET #new" do
+    it "assigns a new food to @food" do
+      get :new
+      expect(assigns(:food)).to be_a_new(Food)
+    end
+  end
+
   describe "POST #create" do
     context "with valid attributes" do
       it "creates a new food" do

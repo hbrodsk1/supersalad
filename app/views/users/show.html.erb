@@ -1,20 +1,21 @@
-<h2>Hey <%= @user.firstname %>!</h2>
-<p>Check out these dank Soups and Salads you've served up or <%= link_to "Upload some new Soup or Salad", new_food_path %></p>
-<%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
+<h4 class="col-md-8 col-md-offset-2 heading">Check out these dank Soups and Salads <%= @user.email %> has served up or<br> <%= link_to "Upload some new Soup or Salad", new_food_path %></h4>
 
+<% @user.foods.each do |food| %>
+	<div class="row col-md-12">
+		<div class="food col-md-4">
+  			<h3 class="title"><%= link_to food.title.capitalize, food_path(food.id) %></h3>
+  			<%= link_to (image_tag (food.image.url)), food_path(food.id) %>
+  			<%= render 'shared/vote_form', :food => food %>
+  			<%= link_to pluralize(food.votes.count, "person"), food_path(food) %> <%= food.votes.count == 1 ? 'wants' : 'want' %> to gobble this
+  		</div>
 
-
-
- 
-
-  <strong>Image:</strong>
-  <% @user.foods.each do |food| %>
-
-  <h3><%= link_to food.title.capitalize, food_path(food.id) %></h3>
-  <p><%= link_to (image_tag (food.image.url)), food_path(food.id) %></p>
-  <%= link_to "Delete", food, method: :delete, data: {confirm: "Really delete this article?"} %>
-  <% end %> 
-
-
-
+  		<div class="description col-md-6">
+  			<% if food.description.length == 0 %>
+  				<p>No Description Provided</p>	
+  			<% else %>
+  				<p><%= food.description %><p>
+  			<% end %>		
+  		</div>
+	</div>
+<% end %> 
 

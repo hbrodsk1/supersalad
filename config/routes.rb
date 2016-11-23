@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
 
 
+  
+
   get 'home', :to => 'static_pages#home'
   get 'static_pages/about'
   get 'static_pages/contact'
@@ -12,8 +14,11 @@ Rails.application.routes.draw do
     root 'devise/sessions#new'
   end
 
-  resources :users
-  resources :foods
+  resources :users do
+    resources :votes
+  end
+  
+  resources :foods 
 
   get 'soups', :to => 'foods#soup'
   get 'salads', :to => 'foods#salad'

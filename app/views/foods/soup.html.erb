@@ -1,5 +1,9 @@
-<% @soups.each do |soup| %>
-	<h3><%= link_to soup.title.capitalize, food_path(soup.id) %></h3>
-  	<%= link_to image_tag(soup.image_url, :size => "260x180"), food_path(soup.id) %>
-
-<% end %>
+<h4 class="greeting col-sm-4 col-sm-offset-1">Our Soup Selection</h4>
+<div class="food-container col-md-12">
+	<% @soups.each do |soup| %>
+		<div class="food col-md-4">
+			<%= link_to image_tag(soup.image_url, class: "img-preview"), food_path(soup.id) %>
+			<h3 class="title-preview"><%= link_to soup.title.capitalize, food_path(soup.id) %></h3>
+	  	</div>
+	<% end %>
+</div>
