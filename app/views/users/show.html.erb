@@ -6,7 +6,7 @@
   			<h3 class="title"><%= link_to food.title.capitalize, food_path(food.id) %></h3>
   			<%= link_to (image_tag (food.image.url)), food_path(food.id) %>
   			<%= render 'shared/vote_form', :food => food %>
-  			<%= link_to pluralize(food.votes.count, "person"), food_path(food) %> <%= food.votes.count == 1 ? 'wants' : 'want' %> to gobble this
+  			<%= link_to pluralize(food.votes.count, "person"), user_votes_path(:user_id => current_user.id, :food_id => food.id) %> <%= food.votes.count == 1 ? 'wants' : 'want' %> to gobble this
   		</div>
 
   		<div class="description col-md-6">

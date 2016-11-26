@@ -5,3 +5,14 @@ FactoryGirl.define do
 		confirmed_at Time.now
 	end
 end
+
+require 'faker'
+
+FactoryGirl.define do
+  factory :person do
+    email                 { Faker::Internet.email }
+    password              "password"
+    password_confirmation "password"
+    confirmed_at Time.now
+  end
+end

@@ -20,6 +20,7 @@
         <ul class="nav navbar-nav">
           <li> <%= link_to "Home",  home_path %></li>
           <li> <%= link_to "Profile",  user_path(current_user) %></li>
+          <li> <%= link_to "Browse", browse_path %></li>
           <li> <%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
         </ul>
       </div>

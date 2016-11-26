@@ -1,7 +1,7 @@
 class VotesController < ApplicationController
 
   def index
-    @votes = Vote.all
+    @votes = Food.find(params[:food_id]).votes
   end
 
   def new
@@ -34,7 +34,7 @@ class VotesController < ApplicationController
 
   	if @vote.destroy!
   		flash[:notice] = "Unvoted!"
-      redirect_to user_path(current_user)
+      redirect_back(fallback_location: root_path)
   	end
   end
 

@@ -6,6 +6,10 @@ class StaticPagesController < ApplicationController
   	#@soup = Food.random_soup
   end
 
+  def browse
+  	@foods = Food.all
+  end
+
   def about
   end
 

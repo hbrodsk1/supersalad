@@ -1,16 +1,21 @@
-<h4 class="greeting col-sm-12">Hey <%= current_user.email %>!</h4>
-<h3 class="craving col-sm-12">Are you craving...</h3>
-<div class="browse-by col-sm-12">
-	<div class="browse-food col-sm-3 col-sm-offset-2">
-		<%= link_to (image_tag (Food.all.where(kind: 'soup').first.image.url)), soups_path%>
-		<h3 class="title"><%= link_to "Soup", soups_path %></h3>
-	</div>
+<h4 class="prompt col-sm-12">Which looks tastier...?</h4>
+	<div class="browse-by col-sm-12">
+		<div class="browse-food col-sm-4 col-sm-offset-1">
+			<% soup_img = Food.random_soup %>
+			<% salad_img = Food.random_salad %>
+			<div class="game-pic"><%= link_to (image_tag (soup_img.image.url)), result_food_path(:id => soup_img.id, :lose_id => salad_img.id), method: :put %></div>
+			<h3 class="title"><%= link_to soup_img.title, result_food_path(:id => soup_img.id, :lose_id => salad_img.id), method: :put %></h3>
+		</div>
 
-	<p class="col-sm-2 or">or</p>
+		<div class="col-sm-2 vs">
+			<div id="top-word">soup</div> 
+			<div id="vs-word">or</div>
+			<div id= "bottom-word">salad</div>
+		</div>
 
-	<div class="browse-food col-sm-3">
-		<%= link_to (image_tag (Food.all.where(kind: 'salad').first.image.url)), salads_path %>
-		<h3 class="title"><%= link_to "Salad", salads_path %></h3>
+		<div class="browse-food col-sm-4">
+			<div class="game-pic"><%= link_to (image_tag (salad_img.image.url)), result_food_path(:id => salad_img.id, :lose_id => soup_img.id), method: :put %></div>
+			<h3 class="title"><%= link_to salad_img.title, result_food_path(:id => salad_img.id, :lose_id => soup_img.id), method: :put %></h3>
+		</div>
+		
 	</div>
-	
-</div>

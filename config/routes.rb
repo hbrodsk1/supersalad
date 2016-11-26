@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   
 
   get 'home', :to => 'static_pages#home'
+  get 'browse', :to => 'static_pages#browse'
   get 'static_pages/about'
   get 'static_pages/contact'
 
@@ -18,7 +19,11 @@ Rails.application.routes.draw do
     resources :votes
   end
   
-  resources :foods 
+  resources :foods do
+    member do
+      put "result", to: "foods#result"
+    end
+  end
 
   get 'soups', :to => 'foods#soup'
   get 'salads', :to => 'foods#salad'

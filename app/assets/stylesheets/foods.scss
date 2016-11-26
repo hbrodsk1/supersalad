@@ -18,6 +18,7 @@ $primary-color: #2c3e52;
 	.food {
 		margin-bottom: 50px;
 		text-align: center;
+		color: $primary-color;
 		.img-preview {
 			border-radius: 50%;
 			width: 200px;
@@ -30,6 +31,7 @@ $primary-color: #2c3e52;
 			border-radius: 50%;
 			width: 400px;
 			height: 400px;
+			margin-bottom: 2em;
 		}
 		.title-preview {
 			font-size: 1.5em;

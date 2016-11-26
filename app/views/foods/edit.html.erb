@@ -1,0 +1,41 @@
+<div class="form-container col-md-12">
+  <div class="form col-md-8">
+    <h1 class="purpose">Edit <%= @food.title%></h1>
+
+    <%# add error list %>
+
+    <%= form_for @food,  url: {action: "update"}, html: { multipart: true } do |f| %>
+      
+      <div class="field">
+     	  <%=f.hidden_field :user_id, :value => current_user.id %>
+
+        <%= f.label :title %><br>
+        <%= f.text_field :title, placeholder: "What your food's name?"  %>
+      </div>
+
+      <div class="field">
+        <%= f.label :kind %><br>
+        <%= f.select(:kind, [['Soup', 'soup'], ['Salad', 'salad']]) %>
+      </div>
+
+      <div class="field">
+        <%= f.label :description %><br>
+        <%= f.text_area :description, size: "70x8", placeholder: "Anything you want to say about your food..." %>
+      </div>
+
+      <div class="field">
+        <%= f.label :recipe %><br>
+        <%= f.text_area :recipe, size: "70x8", placeholder: "Give us that dank recipe" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :image %><br>
+        <%= f.file_field :image, :class => 'img-file' %>
+      </div>
+     
+      <div>
+        <%= f.submit "Add your food to the menu!", :class => 'actions' %>
+      </div>
+    <% end %>
+  </div>
+</div>

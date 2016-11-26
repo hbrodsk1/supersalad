@@ -53,6 +53,16 @@ class FoodsController < ApplicationController
   	end
   end
 
+  def result
+    @winning_food = Food.find(params[:id])
+    Food.food_win(@winning_food)
+
+    @losing_food = Food.find(params[:lose_id])
+    Food.food_lose(@losing_food)
+
+    redirect_to home_path
+  end
+
 
   private
 

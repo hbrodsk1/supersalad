@@ -1,7 +1,9 @@
 <div class="food-container col-md-12">
 	<p class="title col-md-12"><%= @food.title %></p>
-	<div class="food col-md-4">
+	<div class="food col-md-4 col-md-offset-1">
 		<%= image_tag @food.image.url, :class => "main-pic"%>
+    <p>Created by Chef <%= link_to @food.user.email, user_path(@food.user) %></p>
+    <%= render 'shared/vote_form', :food => @food %> 
 	</div>
 
 	<div class="description col-md-6">
@@ -9,7 +11,8 @@
   			<p>No Description Provided</p>	
   		<% else %>
   			<p><%= @food.description %><p>
-  		<% end %>		
+  		<% end %>	
+      <%= link_to "edit", edit_food_path(@food) %>	
   	</div>
 </div>
 <%# make these things below conditional as if to if they already exist or not. If they dont, then render render a textbox to add the information %>
@@ -18,4 +21,4 @@
 
 
 <%# use .capitalize instead of to_s below once all users have a username %>
-<p>Back to <%= link_to @food.user.email + "'s profile", user_path(@food.user_id) %></p>
+<p><%= link_to 'Back', url_for(:back) %></p>
