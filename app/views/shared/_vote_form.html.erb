@@ -1,12 +1,8 @@
 <% unless current_user.votes.pluck(:food_id).include?(food.id) %>
-	<% vote = current_user.votes.build %>
-	<%= form_for [current_user, vote] do |f| %>
-	<%= f.hidden_field 'food_id', value: food.id %>
-	<%= f.hidden_field 'user_id', value: current_user.id %>
-	<%= f.submit "Like This Food" %>
-<% end %>
+	<%= button_to "like", user_votes_path(:vote => { food_id: food.id, user_id: current_user.id }, user_id: current_user.id), :remote => true, :method => "post" %>
 
 <% else %>
 <% vote = food.votes.where(user_id: current_user.id).first %>
-<%= button_to "Unlike This Food", user_vote_path(current_user, vote), method: :delete %>
+<%= button_to "Unlike This Food", user_vote_path(current_user, vote), :remote => true, method: "delete" %>
 <% end %>
+

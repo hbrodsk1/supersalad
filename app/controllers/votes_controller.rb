@@ -16,7 +16,6 @@ class VotesController < ApplicationController
   	if @vote.save
       puts @vote
   		flash[:notice] = "Thanks for voting!"
-      redirect_back(fallback_location: root_path)
   	else
       puts "No"
   		flash[:notice] = "Something went wrong"
@@ -34,7 +33,6 @@ class VotesController < ApplicationController
 
   	if @vote.destroy!
   		flash[:notice] = "Unvoted!"
-      redirect_back(fallback_location: root_path)
   	end
   end
 

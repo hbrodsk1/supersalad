@@ -1,23 +1,36 @@
 <div class="food-container col-md-12">
 	<p class="title col-md-12"><%= @food.title %></p>
 	<div class="food col-md-4 col-md-offset-1">
-		<%= image_tag @food.image.url, :class => "main-pic"%>
+  <%= link_to image_tag(@food.image_url, class: "main-pic"), edit_food_path(@food), :class => "main-pic" %>
     <p>Created by Chef <%= link_to @food.user.email, user_path(@food.user) %></p>
     <%= render 'shared/vote_form', :food => @food %> 
 	</div>
 
-	<div class="description col-md-6">
-  		<% if @food.description.length == 0 %>
-  			<p>No Description Provided</p>	
-  		<% else %>
-  			<p><%= @food.description %><p>
-  		<% end %>	
-      <%= link_to "edit", edit_food_path(@food) %>	
-  	</div>
+	<div class="description col-md-5 col-md-offset-1">
+  	<% if @food.description.length == 0 %>
+  		<p>No Description Provided</p>	
+  	<% else %>
+  		<p><%= @food.description %></p>
+  	<% end %>	
+    <%= link_to "edit", edit_food_path(@food) %>	
+  </div>
+
+  <div class="recipe col-md-5 col-md-offset-6">
+    <div class="recipe-header col-md-12">
+      <h3>Recipe:</h3>
+    </div>
+
+    <div class="things">
+      <% @food.separate_ingredients.each do |thing| %>
+        <li><%= thing %></li>
+      <% end %>
+    </div>
+
+  </div>
 </div>
 <%# make these things below conditional as if to if they already exist or not. If they dont, then render render a textbox to add the information %>
 
-<p><%= @food.recipe %></p>
+
 
 
 <%# use .capitalize instead of to_s below once all users have a username %>

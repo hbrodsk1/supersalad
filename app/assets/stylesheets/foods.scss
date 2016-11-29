@@ -32,6 +32,7 @@ $primary-color: #2c3e52;
 			width: 400px;
 			height: 400px;
 			margin-bottom: 2em;
+			
 		}
 		.title-preview {
 			font-size: 1.5em;
@@ -47,6 +48,7 @@ $primary-color: #2c3e52;
 		}
 	}
 	.description {
+		border: 1px solid $primary-color;
 		text-align: center;
 		height: 400px;
 		font-size: 1.3em;
@@ -55,6 +57,18 @@ $primary-color: #2c3e52;
 			transform: translateY(-50%);
 			position: relative;
   			top: 50%;
+		}
+	}
+
+	.recipe {
+		border: 1px solid $primary-color;
+		.recipe-header {
+			position: relative;
+			text-align: center;
+		}
+		
+		.things {
+			
 		}
 	}
 }

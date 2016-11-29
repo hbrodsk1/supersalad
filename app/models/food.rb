@@ -6,7 +6,7 @@ class Food < ApplicationRecord
 
 	mount_uploader :image, ImageUploader
 
-	def Food.random_soup
+	  def Food.random_soup
   		Food.all.where(kind: 'soup').shuffle.first
   	end
 
@@ -21,4 +21,8 @@ class Food < ApplicationRecord
   	def Food.food_lose(food)
   		Food.find(food.id).update(loses: food.loses + 1 )
   	end
+
+    def separate_ingredients
+      self.recipe.split("\r\n")
+    end
 end

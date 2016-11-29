@@ -30,6 +30,29 @@ $primary-color: #2c3e52;
 	margin: auto;
 	display: flex;
 	.browse-food {
+		.check-it {
+			border-radius: 50%;
+			height: 3em;
+			width: 10em;
+			position: relative;
+			top: 5em;
+			text-align: center;
+		}
+		.check-it a {
+			color: $primary-color;
+			position: relative;
+			top: 25%;
+		}
+		.check-it-left {
+			background-color: #88D8D8;
+			float: left;
+			left: -5em;
+		}
+		.check-it-right {
+			background-color: #88D8B0;
+			float: right;
+			right: -5em;
+		}
 		.game-pic {
 			margin-top: 15vh;
 			position: relative;
@@ -42,6 +65,7 @@ $primary-color: #2c3e52;
 		img{
 			border-radius: 50%;
 			width: 100%;
+			height: 22vw;
 			margin: 0 auto;
 			&:hover {
 				transform: scale(1.04);

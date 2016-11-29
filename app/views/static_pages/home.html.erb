@@ -3,6 +3,7 @@
 		<div class="browse-food col-sm-4 col-sm-offset-1">
 			<% soup_img = Food.random_soup %>
 			<% salad_img = Food.random_salad %>
+			<p class="check-it check-it-left"><%= link_to "Check out this Soup", food_path(soup_img) %></p>
 			<div class="game-pic"><%= link_to (image_tag (soup_img.image.url)), result_food_path(:id => soup_img.id, :lose_id => salad_img.id), method: :put %></div>
 			<h3 class="title"><%= link_to soup_img.title, result_food_path(:id => soup_img.id, :lose_id => salad_img.id), method: :put %></h3>
 		</div>
@@ -14,6 +15,7 @@
 		</div>
 
 		<div class="browse-food col-sm-4">
+			<p class="check-it check-it-right"><%= link_to "Check out this Salad", food_path(salad_img) %></p>
 			<div class="game-pic"><%= link_to (image_tag (salad_img.image.url)), result_food_path(:id => salad_img.id, :lose_id => soup_img.id), method: :put %></div>
 			<h3 class="title"><%= link_to salad_img.title, result_food_path(:id => salad_img.id, :lose_id => soup_img.id), method: :put %></h3>
 		</div>
