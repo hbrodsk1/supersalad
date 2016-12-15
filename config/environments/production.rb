@@ -3,6 +3,11 @@ Rails.application.configure do
   # Default Mailer Host
   config.action_mailer.default_url_options = { :host => 'https://supersalad.herokuapp.com/' }
   config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+  :address => "127.0.0.1",
+  :port    => "587",
+  :domain  => 'https://supersalad.herokuapp.com/'
+}
   # Code is not reloaded between requests.
   config.cache_classes = true
 
