@@ -40,6 +40,7 @@ gem 'carrierwave', '>= 1.0.0.beta', '< 2.0'
 gem 'mini_magick'
 #Use faker to help seed database
 gem 'faker', '1.6.3'
+gem 'sendgrid-ruby'
 
 
 # Use Capistrano for deployment
