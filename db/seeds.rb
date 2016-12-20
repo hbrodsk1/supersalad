@@ -8,4 +8,4 @@
 #10.times { FactoryGirl.create(:user) }
 
 soup = Food.create(kind: 'soup', title: 'default_soup', image: Rails.root.join("app/assets/images/browse_soup.jpeg").open)
-salad = Food.create(kind: 'salad', title: 'default_salad', image: Rails.root.join("app/assets/images/browse_salad.jpeg").open))
+salad = Food.create(kind: 'salad', title: 'default_salad', image: Rails.root.join("app/assets/images/browse_salad.jpeg").open)
