@@ -7,5 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 #10.times { FactoryGirl.create(:user) }
 
-soup = Food.create(kind: 'soup', title: 'default_soup', image: Rails.root.join("app/assets/images/browse_soup.jpeg").open)
-salad = Food.create(kind: 'salad', title: 'default_salad', image: Rails.root.join("app/assets/images/browse_salad.jpeg").open)
+soup = Food.create(kind: 'soup', title: 'default_soup')
+soup.image = File.open(Rails.root.join("app/assets/images/browse_soup.jpeg"))
+salad = Food.create(kind: 'salad', title: 'default_salad')
+salad.image = File.open(Rails.root.join("app/assets/images/browse_salad.jpeg"))
