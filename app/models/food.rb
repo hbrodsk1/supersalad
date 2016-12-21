@@ -1,8 +1,6 @@
 class Food < ApplicationRecord
 	belongs_to :user
 	has_many :votes, dependent: :destroy
-
-  has_attached_file :photo
   
 	validates :title, :kind, :image, presence: true
 
