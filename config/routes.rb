@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-
-
-  
-
   get 'home', :to => 'static_pages#home'
   get 'browse', :to => 'static_pages#browse'
   get 'static_pages/about'

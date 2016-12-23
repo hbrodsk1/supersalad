@@ -1,5 +1,0 @@
-<% @salads.each do |salad| %>
-	<h3 class="title"><%= salad.title.capitalize %></h3>
-  <p><%= link_to (image_tag (salad.image.url)), food_path(salad.id) %></p>
-	<%= salad.title %>
-<% end %>

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <%= favicon_link_tag 'logo.jpg' %>
     <title>SuperSalad</title>
     <%= csrf_meta_tags %>
 
@@ -10,22 +11,25 @@
   </head>
 
   <body>
-  <% if logged_in? %>
-  	<nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-        <a class="navbar-brand" href="/home">SuperSalad</a>
-        </div>
+    <% if logged_in? %>
+    	<nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/home">SuperSalad</a>
+          </div>
 
-        <ul class="nav navbar-nav">
-          <li> <%= link_to "Home",  home_path %></li>
-          <li> <%= link_to "Profile",  user_path(current_user) %></li>
-          <li> <%= link_to "Browse", browse_path %></li>
-          <li> <%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
-        </ul>
-      </div>
-    </nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li> <%= link_to "Home",  home_path %></li>
+            <li> <%= link_to "Profile",  user_path(current_user) %></li>
+            <li> <%= link_to "Browse", browse_path %></li>
+            <li> <%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
+          </ul>
+
+        </div>
+      </nav>
     <% end %>
+
     <%= yield %>
+
   </body>
 </html>

@@ -5,20 +5,24 @@ class VotesController < ApplicationController
   end
 
   def new
-  	@vote = Vote.new
+  	@vote = current_user.votes.new
   end
 
   def create
     @user = current_user
-  	@vote = Vote.new(vote_params)
+  	@vote = current_user.votes.build(vote_params)
 
 
-  	if @vote.save
-      puts @vote
-  		flash[:notice] = "Thanks for voting!"
+  	if @vote.save!
+      @food = @vote.food
+      respond_to do |format|
+        format.html {redirect_to :back, notice: "Liked!"}
+        format.js  
+      end
+
+      puts @vote.food.id
   	else
       puts "No"
-  		flash[:notice] = "Something went wrong"
       redirect_back(fallback_location: root_path)
   	end
   end
@@ -30,15 +34,21 @@ class VotesController < ApplicationController
 
   def destroy
     @vote = Vote.find(params[:id])
+    @food = @vote.food
 
   	if @vote.destroy!
-  		flash[:notice] = "Unvoted!"
+      respond_to do |format|
+        format.html {redirect_to :back, notice: "Unliked!"}
+        format.js 
+      end
+    else
+      puts "NOOOOOO"
   	end
   end
 
   private
 
   def vote_params
-  	params.require(:vote).permit(:food_id, :user_id)
+  	params.require(:vote).permit(:food_id)
   end
 end

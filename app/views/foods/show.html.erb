@@ -20,9 +20,9 @@
       <h3>Recipe:</h3>
     </div>
 
-    <div class="things">
-      <% @food.separate_ingredients.each do |thing| %>
-        <li><%= thing %></li>
+    <div class="ingredients">
+      <% @food.separate_ingredients.each do |ingredient| %>
+        <li><%= ingredient %></li>
       <% end %>
     </div>
 

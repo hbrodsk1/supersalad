@@ -3,7 +3,6 @@ class StaticPagesController < ApplicationController
 
   def home
   	@foods = Food.all
-  	#@soup = Food.random_soup
   end
 
   def browse
