@@ -1,7 +1,7 @@
 <% unless current_user.votes.pluck(:food_id).include?(food.id) %>
-	<%= button_to "Like This Food", user_votes_path(current_user, { vote: { food_id: food.id } }), :remote => true %>
+    <%= button_to "Like This Food", user_votes_path(current_user, { vote: { food_id: food.id } }), form_class: food.id, :remote => true %>
 <% else %>
-	<% vote = food.votes.where(user_id: current_user.id).first %>
-	<%= button_to "Unlike This Food", user_vote_path(current_user, vote), :remote => true, method: "delete" %>
+    <% vote = food.votes.where(user_id: current_user.id).first %>
+    <%= button_to "Unlike This Food", user_vote_path(current_user, vote), form_class: food.id, :remote => true, method: "delete" %>
 <% end %>
 

@@ -1,24 +1,24 @@
 <h4 class="col-md-8 col-md-offset-2 heading">Check out these dank Soups and Salads <%= @user.email %> has served up or<br> <%= link_to "Upload some new Soup or Salad", new_food_path %></h4>
 
 <% @user.foods.each do |food| %>
-	<div class="row col-md-12">
-		<div class="food col-md-4">
-  			<h3 class="title"><%= link_to food.title.capitalize, food_path(food.id) %></h3>
-  			<%= link_to (image_tag (food.image.url)), food_path(food.id) %>
-  			<%= render 'shared/vote_form', :food => food %>
-        
-  			<%= link_to pluralize(food.votes.count, "person"), user_votes_path(:user_id => current_user.id, :food_id => food.id) %> <%= food.votes.count == 1 ? 'wants' : 'want' %> to gobble this
-  		</div>
+    <div class="row col-md-12">
+        <div class="food col-md-4">
+            <h3 class="title"><%= link_to food.title.capitalize, food_path(food.id) %></h3>
+            <%= link_to (image_tag (food.image.url)), food_path(food.id) %>
+            <%= render 'shared/vote_form', :food => food %>
 
-  		<div class="description col-md-6">
+            <%= link_to pluralize(food.votes.count, "person"), user_votes_path(:user_id => current_user.id, :food_id => food.id) %> <%= food.votes.count == 1 ? 'wants' : 'want' %> to gobble this
+        </div>
+
+        <div class="description col-md-6">
         <% if @user.id == current_user.id %>
 
-    			<% if food.description.length == 0 %>
-    				<p><%= link_to "Add Description", edit_food_path(food) %></p>	
-    			<% else %>
-    				<p><%= food.description %><p>
+                <% if food.description.length == 0 %>
+                    <p><%= link_to "Add Description", edit_food_path(food) %></p>   
+                <% else %>
+                    <p><%= food.description %><p>
             <p><%= link_to "Edit Description", edit_food_path(food) %></p>
-    			<% end %>
+                <% end %>
 
           <% if food.recipe.length == 0 %>
             <p><%= link_to "Add Recipe", edit_food_path(food) %></p>
@@ -39,7 +39,7 @@
           <% end %>
 
         <% end %>
-  		</div>
-	</div>
-<% end %> 
+        </div>
+    </div>
+<% end %>
 

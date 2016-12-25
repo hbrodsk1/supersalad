@@ -5,15 +5,15 @@ class VotesController < ApplicationController
   end
 
   def new
-  	@vote = current_user.votes.new
+    @vote = current_user.votes.new
   end
 
   def create
     @user = current_user
-  	@vote = current_user.votes.build(vote_params)
+    @vote = current_user.votes.build(vote_params)
 
 
-  	if @vote.save!
+    if @vote.save!
       @food = @vote.food
       respond_to do |format|
         format.html {redirect_to :back, notice: "Liked!"}
@@ -21,10 +21,10 @@ class VotesController < ApplicationController
       end
 
       puts @vote.food.id
-  	else
+    else
       puts "No"
       redirect_back(fallback_location: root_path)
-  	end
+    end
   end
 
   def show
@@ -36,19 +36,19 @@ class VotesController < ApplicationController
     @vote = Vote.find(params[:id])
     @food = @vote.food
 
-  	if @vote.destroy!
+    if @vote.destroy!
       respond_to do |format|
         format.html {redirect_to :back, notice: "Unliked!"}
         format.js 
       end
     else
       puts "NOOOOOO"
-  	end
+    end
   end
 
   private
 
   def vote_params
-  	params.require(:vote).permit(:food_id)
+    params.require(:vote).permit(:food_id)
   end
 end
