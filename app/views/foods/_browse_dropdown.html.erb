@@ -1,6 +1,6 @@
 <div class="dropdown browse-menu-container col-sm-offset-3 col-sm-3">
 	<%= form_tag(food_type, :method => :get, :remote => true) do %>
-		<div class="field">   		
+		<div class="sort_by_dropdown">   		
 			<%= select_tag(:sort_by, options_for_select([['Most Wins', 'most_wins'], ['Least Wins', 'least_wins'], ['Highest Win %', 'highest_win_perventage'], ['Lowest Win %', 'lowest_win_perventage'], ['Newest', 'newest'], ['Oldest', 'oldest'] ]), onchange: "this.form.submit();", prompt: "Sort By") %>
 		</div>
 	<% end %>
