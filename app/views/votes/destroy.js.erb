@@ -1,1 +1,1 @@
-$('.<%= @food.id %>').replaceWith("<%= j (render :partial => 'shared/vote_form', :locals => { :food => @food }) %>");
+$('.<%= @food.id %>').replaceWith("<%= j (render :partial => 'shared/vote_form', :locals => { :food => @food, :food_id => @food.id }) %>");

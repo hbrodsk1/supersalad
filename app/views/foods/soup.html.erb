@@ -1,4 +1,5 @@
 <h4 class="greeting col-sm-4 col-sm-offset-1">Our Soup Selection</h4>
+<%= render "browse_dropdown", food_type: 'soups' %>
 <div class="food-container col-md-12">
 	<% @soups.each do |soup| %>
 		<div class="food col-md-4">

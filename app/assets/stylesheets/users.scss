@@ -32,12 +32,26 @@ $primary-color: #2c3e52;
 			height: 200px;
 			width: 200px;
 		}
-		input {
-			background: white;
-			color: $primary-color;
-			font-weight: 700;
-			border-radius: 10px;
+		
+		.like-btn input {
+			background-color: inherit;
+			border: none;
+			width: 100%;
+			outline: none;
 		}
+
+		.unlike-btn input {
+			background-color: inherit;
+			border: none;
+			width: 100%;
+			outline: none;
+		}
+
+		.btn-user-page {
+			width: 50%;
+			margin-left: 25%;
+		}
+
 	}
 	.description {
 		text-align: center;

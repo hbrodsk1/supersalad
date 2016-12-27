@@ -5,11 +5,11 @@ class FoodsController < ApplicationController
   end
 
   def soup
-    @soups = Food.all.where(kind: 'soup')
+    @soups = Food.sort_by(params[:sort_by], "soup")
   end
 
   def salad
-    @salads = Food.all.where(kind: 'salad')
+    @salads = Food.sort_by(params[:sort_by], "salad")
   end
 
   def new
@@ -56,9 +56,11 @@ class FoodsController < ApplicationController
   def result
     @winning_food = Food.find(params[:id])
     Food.food_win(@winning_food)
+    Food.update_win_percentage(@winning_food)
 
     @losing_food = Food.find(params[:lose_id])
     Food.food_lose(@losing_food)
+    Food.update_win_percentage(@losing_food)
 
     redirect_to home_path
   end

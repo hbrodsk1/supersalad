@@ -38,8 +38,8 @@ class VotesController < ApplicationController
 
     if @vote.destroy!
       respond_to do |format|
+        format.js
         format.html {redirect_to :back, notice: "Unliked!"}
-        format.js 
       end
     else
       puts "NOOOOOO"

@@ -8,6 +8,21 @@ $primary-color: #2c3e52;
 	color: #5c3246;
 }
 
+.field {
+	margin-top: 1em;
+	height: 3em;
+	position: relative;
+	#sort_by {
+		position: absolute;
+		bottom: 0;
+		background-color: white;
+		height: 1.7em;
+		font-size: 1.3em;
+		font-weight: 200;
+		color: #5c3246;
+	}
+}
+
 .food-container {
 	display: inline-block;
 	.title {
@@ -19,7 +34,12 @@ $primary-color: #2c3e52;
 		margin-bottom: 50px;
 		text-align: center;
 		color: $primary-color;
+		}
+
 		.img-preview {
+			-webkit-transition:opacity 0.3s linear; 
+     -moz-transition:opacity 0.3s linear; 
+     transition:opacity 0.3s linear;
 			border-radius: 50%;
 			width: 200px;
 			height: 200px;
@@ -46,6 +66,20 @@ $primary-color: #2c3e52;
    				 }
 			}
 		}
+
+		.like-btn input {
+			background-color: inherit;
+			border: none;
+			width: 100%;
+			outline: none;
+		}
+
+		.unlike-btn input {
+			background-color: inherit;
+			border: none;
+			width: 100%;
+			outline: none;
+		}
 	}
 	.description {
 		border: 1px solid $primary-color;
@@ -67,11 +101,8 @@ $primary-color: #2c3e52;
 			text-align: center;
 		}
 		
-		.ingredients {
-			
-		}
 	}
-}
+
 
 .form-container {
 	color: $primary-color;
