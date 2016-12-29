@@ -37,9 +37,6 @@ $primary-color: #2c3e52;
 		}
 
 		.img-preview {
-			-webkit-transition:opacity 0.3s linear; 
-     -moz-transition:opacity 0.3s linear; 
-     transition:opacity 0.3s linear;
 			border-radius: 50%;
 			width: 200px;
 			height: 200px;
@@ -103,9 +100,14 @@ $primary-color: #2c3e52;
 		
 	}
 
+	#pagination-bar {
+		clear: both;
+	}
+
 
 .form-container {
 	color: $primary-color;
+	margin-bottom: 2em;
 	.form {
 		height: auto;
 		.purpose {

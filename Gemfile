@@ -11,6 +11,7 @@ gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 # Use Bootstrap for styling
 gem 'bootstrap-sass', '~> 3.1.1'
+gem 'bootstrap-will_paginate', '~> 0.0.10'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -40,7 +41,12 @@ gem 'carrierwave', '>= 1.0.0.beta', '< 2.0'
 gem 'mini_magick'
 #Use faker to help seed database
 gem 'faker', '1.6.3'
+#User sendgrid to send emails in production
 gem 'sendgrid-ruby'
+#For pagination/infinite scrolling
+gem 'will_paginate', '~> 3.0.5'
+gem 'betterlorem', '~> 0.1.2'
+
 
 
 # Use Capistrano for deployment

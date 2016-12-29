@@ -1,6 +1,6 @@
 <h4 class="col-md-8 col-md-offset-2 heading">Check out these dank Soups and Salads <%= @user.email %> has served up or<br> <%= link_to "Upload some new Soup or Salad", new_food_path %></h4>
 
-<% @user.foods.each do |food| %>
+<% @foods.each do |food| %>
     <div class="row col-md-12">
         <div class="food col-md-4">
             <h3 class="title"><%= link_to food.title.capitalize, food_path(food.id) %></h3>
@@ -42,4 +42,8 @@
         </div>
     </div>
 <% end %>
+
+<div id="pagination-bar">
+  <%= will_paginate @foods %>
+</div>
 

@@ -5,11 +5,11 @@ class FoodsController < ApplicationController
   end
 
   def soup
-    @soups = Food.sort_by(params[:sort_by], "soup")
+    @soups = Food.sort_by(params[:sort_by], "soup").paginate(page: params[:page], per_page: 3)
   end
 
   def salad
-    @salads = Food.sort_by(params[:sort_by], "salad")
+    @salads = Food.sort_by(params[:sort_by], "salad").paginate(page: params[:page], per_page: 3)
   end
 
   def new
