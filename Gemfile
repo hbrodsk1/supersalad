@@ -46,6 +46,8 @@ gem 'sendgrid-ruby'
 #For pagination/infinite scrolling
 gem 'will_paginate', '~> 3.0.5'
 gem 'betterlorem', '~> 0.1.2'
+gem 'aws-sdk', '~> 2'
+gem 'fog'
 
 
 
